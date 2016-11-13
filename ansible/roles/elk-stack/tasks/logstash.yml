@@ -1,0 +1,15 @@
+---
+- name: logstash container
+  docker:
+    name: logstash
+    image: "logstash:2.1"
+    state: started
+    volumes:
+      - "{{ role_path }}/files/config:/etc/logstash"
+    expose:
+      - "5000"
+    ports:
+    - "5000:5000"
+    links:
+    - elasticsearch
+    command: '-f /etc/logstash'

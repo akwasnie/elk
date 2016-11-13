@@ -1,0 +1,16 @@
+---
+- name: logstash container
+  docker:
+    name: logstash-file
+    image: "logstash:2.1"
+    state: started
+    volumes:
+      - "{{ role_path }}/files/config:/etc/logstash"
+      - "/Users/ala/Documents/Projects/WIT2016/elk/ansible-elk/corecaptured.log:/var/log/corecaptured.log"
+    expose:
+      - "5000"
+    ports:
+    - "5000:5000"
+    links:
+    - elasticsearch
+    command: '-f /etc/logstash'

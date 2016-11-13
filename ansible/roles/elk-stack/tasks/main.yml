@@ -1,0 +1,24 @@
+---
+- name: Creating /tmp_cleanup/tools directory on node
+  file:
+    state: directory
+    path: /tmp_cleanup/tools
+
+- name: Creating /tmp_cleanup/tools directory on node
+  file:
+    state: directory
+    path: /tmp_cleanup2/tools
+
+
+- name: Delete
+  file:
+    state: absent
+    path: /tmp_cleanup
+
+- include: elasticsearch.yml
+- pause: seconds=10
+
+- include: logstash.yml
+
+- include: kibana.yml
+
