@@ -5,9 +5,9 @@
     image: "kibana:4.2"
     state: started
     volumes:
-    - "{{ role_path }}/files:/opt/kibana/config"
+      - "{{ role_path }}/files:/opt/kibana/config"
     ports:  
-    - "5601:5601"
+      - "5601:5601"
     links:
-    - elasticsearch
+      - elasticsearch
 

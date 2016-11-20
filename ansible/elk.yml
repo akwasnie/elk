@@ -1,4 +1,4 @@
 ---
 - hosts: [elk-stack]
   roles:
-  - { role: elk-stack, tags: elk }
+  - { role: elk-stack }

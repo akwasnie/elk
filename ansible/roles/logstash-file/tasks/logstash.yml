@@ -6,7 +6,7 @@
     state: started
     volumes:
       - "{{ role_path }}/files/config:/etc/logstash"
-      - "/Users/ala/Documents/Projects/WIT2016/elk/ansible-elk/corecaptured.log:/var/log/corecaptured.log"
+      - "/Users/ala/Documents/Projects/WIT2016/elk/ansible/corecaptured.log:/var/log/corecaptured.log"
     expose:
       - "5000"
     ports:

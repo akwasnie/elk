@@ -1,4 +1,4 @@
 ---
 - hosts: [elk-stack]
   roles:
-  - { role: logstash-file, tags: logstash-file }
+  - { role: logstash-file }
